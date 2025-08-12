@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  chat:
+    build: .
+    container_name: ollama-chat
+    ports:
+      - "8080:8080"     # public: http://172.166.178.170:8080
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # reach Ollama on the host
+    restart: unless-stopped
