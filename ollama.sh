@@ -46,6 +46,8 @@ sudo systemctl restart ollama
 
 # === Install Docker Engine ===
 sudo apt install -y docker.io
+sudo usermod -aG docker $USER
+newgrp docker
 
 # Enable & start Docker
 sudo systemctl enable docker
